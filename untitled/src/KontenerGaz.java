@@ -5,7 +5,7 @@ public class KontenerGaz extends Kontenery implements IHazardNotifier{
 
     @Override
     public void orpoznienieLadunku() {
-
+    masaLadunku = masaLadunku * 0.05;
     }
 
     @Override

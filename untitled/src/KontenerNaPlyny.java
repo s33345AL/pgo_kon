@@ -13,8 +13,6 @@ public class KontenerNaPlyny extends Kontenery implements IHazardNotifier{
     @Override
     public void zaladowanieKontener() throws OverfillException {
         super.zaladowanieKontener();
-        masaLadunku = getMaxLadunku() * 0.5;
-
         if(czyBezpieczny == false && masaLadunku > getMaxLadunku() * 0.5) {
             notifyHazard();
         }else{
