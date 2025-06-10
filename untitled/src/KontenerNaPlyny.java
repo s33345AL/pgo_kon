@@ -2,6 +2,7 @@ public class KontenerNaPlyny extends Kontenery implements IHazardNotifier{
     protected boolean czyBezpieczny;
     public KontenerNaPlyny(double masaLadunku, double wysokosc, double wagaSamegoKontenera, double glebokosc, String numerSeryjny, double maxLadunku, boolean czyBezpieczny) {
         super(masaLadunku, wysokosc, wagaSamegoKontenera, glebokosc, numerSeryjny, maxLadunku);
+        this.numerSeryjny = "KON-L-" + numerSeryjny;
         this.czyBezpieczny = czyBezpieczny;
     }
 

@@ -1,25 +1,26 @@
 public class KontenerChlodniczy extends Kontenery {
     protected String rodzajProduktu;
     protected double temperaturaWKontenerze;
+    protected double temperaturaProduktu;
 
-    public KontenerChlodniczy(double masaLadunku, double wysokosc, double wagaSamegoKontenera, double glebokosc, String numerSeryjny, double maxLadunku, String rodzajProduktu, double temperaturaWKontenerze) {
+    public KontenerChlodniczy(double masaLadunku, double wysokosc, double wagaSamegoKontenera, double glebokosc, String numerSeryjny, double maxLadunku, String rodzajProduktu, double temperaturaProduktu, double temperaturaWKontenerze) {
         super(masaLadunku, wysokosc, wagaSamegoKontenera, glebokosc, numerSeryjny, maxLadunku);
+        this.numerSeryjny = "KON-C-" + numerSeryjny;
         this.rodzajProduktu = rodzajProduktu;
         this.temperaturaWKontenerze = temperaturaWKontenerze;
-    }
-
-    public void czyProduktMozeByc(Produkt produkt) {
-         if (produkt.getNazwaProduktu().equals(rodzajProduktu) && temperaturaWKontenerze >= produkt.getTemperaturaProduktu()){
-             System.out.println("Produkt może zostać załadowany");
-         } else if (produkt.getNazwaProduktu().equals(rodzajProduktu) && temperaturaWKontenerze < produkt.getTemperaturaProduktu()){
-            System.out.println("Produkt nie może być załadowany ze względu na niższą temperature w kontenerze");
-        } {
-
-         }
+        this.temperaturaProduktu = temperaturaProduktu;
     }
 
     @Override
     public void orpoznienieLadunku() {
+    }
+
+    @Override
+    public void zaladowanieKontener() throws OverfillException {
+        if (temperaturaWKontenerze < temperaturaProduktu) {
+            throw new OverfillException("Produkt nie może zostać załadowany do kontenera ze względu na temperature");
+        }
+        super.zaladowanieKontener();
     }
 
     public String getRodzajProduktu() {

@@ -19,8 +19,14 @@ public abstract class Kontenery {
 
     public void zaladowanieKontener() throws OverfillException {
         if (masaLadunku > maxLadunku) {
-            throw new OverfillException();
+            throw new OverfillException("Za duży ładunek");
         }
+    }
+
+    public double wagaCalkowita() {
+        double wagaCalowita = 0;
+         wagaCalowita = getMasaLadunku() + getWagaSamegoKontenera();
+         return wagaCalowita;
     }
 
     public double getMasaLadunku() {

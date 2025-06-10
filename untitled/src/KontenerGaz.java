@@ -1,6 +1,7 @@
 public class KontenerGaz extends Kontenery implements IHazardNotifier{
     public KontenerGaz(double masaLadunku, double wysokosc, double wagaSamegoKontenera, double glebokosc, String numerSeryjny, double maxLadunku) {
         super(masaLadunku, wysokosc, wagaSamegoKontenera, glebokosc, numerSeryjny, maxLadunku);
+        this.numerSeryjny = "KON-G-" + numerSeryjny;
     }
 
     @Override

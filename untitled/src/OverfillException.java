@@ -1,5 +1,5 @@
 public class OverfillException extends Exception {
-    public OverfillException() {
-        super();
+    public OverfillException(String message) {
+        super(message);
     }
 }
