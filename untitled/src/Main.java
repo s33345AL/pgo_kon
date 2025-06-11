@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-   try{
+   /*try{
         Kontenerowiec statek1 = new Kontenerowiec(25, 10, 1000);
    KontenerNaPlyny kon1 = new KontenerNaPlyny(20, 15, 45, 22, "2242", 25, true);
    KontenerGaz kon2 = new KontenerGaz(40, 21, 900, 22, "2156", 50);
@@ -19,8 +19,29 @@ Kontenerowiec statek2 = new Kontenerowiec(25, 10, 1000);
 
    statek1.wyswietlInformacjeOStatku();
     }catch (Exception e){
-       System.out.println("Błąd: " + e.getMessage());}
+       System.out.println("Błąd: " + e.getMessage());}*/
+        Scanner sc = new Scanner(System.in);
+        StatekKonsola konsola = new StatekKonsola();
+        int wybor;
 
+        while (true) {
+            konsola.pokazStatki();
 
+            System.out.println("\nMożliwe akcje do wykonania: ");
+            System.out.println("1. Dodaj kontenerowiec");
+
+            System.out.println("Wybierz opcję: ");
+            wybor = sc.nextInt();
+            sc.nextLine();
+
+            switch (wybor) {
+                case 1:
+                    konsola.dodajStatek(sc);
+                    break;
+                default:
+                    System.out.println("Nieprawidłowy wybór");
+            }
+
+        }
     }
 }

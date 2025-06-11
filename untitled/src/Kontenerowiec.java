@@ -75,4 +75,13 @@ public class Kontenerowiec {
             System.out.println(kontenery.getNumerSeryjny());
         }
     }
+
+    @Override
+    public String toString() {
+        return "Kontenerowiec{" +
+                "maxPredkosc=" + maxPredkosc +
+                ", maxKontenerow=" + maxKontenerow +
+                ", maxWaga=" + maxWaga +
+                '}';
+    }
 }
